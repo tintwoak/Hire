@@ -1,10 +1,10 @@
-// Simple JavaScript to handle button click
-const btn = document.getElementById('notifyBtn');
-const message = document.getElementById('message');
+// Ask for password first
+const password = prompt("This site is under construction. Enter password:");
 
-btn.addEventListener('click', () => {
-  message.textContent = "Thanks! We'll notify you when the site is live.";
-  btn.disabled = true;
-  btn.style.backgroundColor = '#6c757d'; // change button color to gray
-  btn.style.cursor = 'default';
-});
+if (password === "cochin4422") {
+  document.getElementById("content").style.display = "block";
+  document.body.classList.remove("locked");
+
+} else {
+  document.body.innerHTML = "<h1 style='color: red; text-align:center; margin-top: 50px;'>Access Denied</h1>";
+}
