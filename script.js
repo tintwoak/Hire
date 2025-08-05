@@ -4,7 +4,7 @@ const password = prompt("This site is under construction. Enter password:");
 if (password === "cochin4422") {
   document.getElementById("content").style.display = "block";
   document.body.classList.remove("locked");
-/*
+
   // Countdown Logic
   const targetDate = new Date("2025-12-01T00:00:00"); // Set your launch date here
 
@@ -31,9 +31,8 @@ if (password === "cochin4422") {
   // Update every second
   updateCountdown();
   setInterval(updateCountdown, 1000);
-*/
+
   
 } else {
   document.body.innerHTML = "<h1 style='color: red; text-align:center; margin-top: 50px;'>Access Denied</h1>";
 }
-
