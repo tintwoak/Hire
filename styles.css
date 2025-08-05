@@ -6,7 +6,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f0f0f0;
+  background: url('images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: #333;
   flex-direction: column;
 }
@@ -40,4 +41,5 @@ button:hover {
   margin-top: 1em;
   font-weight: bold;
   color: green;
+
 }
