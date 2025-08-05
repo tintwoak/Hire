@@ -1,4 +1,4 @@
-/* Basic CSS for center alignment and styling */
+/* Basic CSS for center alignment and styling page */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -41,3 +41,4 @@ button:hover {
   font-weight: bold;
   color: green;
 }
+
