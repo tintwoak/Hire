@@ -5,8 +5,9 @@
   box-sizing: border-box;
 }
 
-body, html {
+html, body {
   height: 100%;
+  width: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -23,14 +24,15 @@ body {
   flex-direction: column;
 }
 .overlay {
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
-  padding: 40px;
+  /*background-color: rgba(255, 255, 255, 0.8);  NEW light white background */
+  padding: 40px 20px;
   border-radius: 15px;
-  color: white;
+  color: #333; /* change text color for readability */
+  text-align: center;
   max-width: 600px;
-  width: 90%;
+  width: 100%;
 }
+
 .logo {
   width: 100px;
   margin-bottom: 20px;
@@ -67,4 +69,17 @@ button:hover {
 
 }
 
+@media (max-width: 600px) {
+  .overlay h1 {
+    font-size: 1.5rem;
+  }
+
+  .overlay p {
+    font-size: 1rem;
+  }
+
+  .logo {
+    width: 80px;
+  }
+}
 
