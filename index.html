@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Under Construction</title>
   <style>
     * {
@@ -14,68 +14,65 @@
     html, body {
       height: 100%;
       font-family: "Segoe UI", sans-serif;
-      background: url('images/background.jpg') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      color: #fff;
-    }
-
-    .container {
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.1); /* translucent white */
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 500px;
-      width: 100%;
+      background: url('images\background.jpg') no-repeat center center/cover;
+      color: #000; /* Black text */
       text-align: center;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      overflow: hidden;
     }
 
-    .logo {
-      margin-bottom: 20px;
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      z-index: -1;
+    }
+
+    .wrapper {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 500px;
     }
 
     .logo img {
-      height: 100px;
-      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+      max-height: 100px;
+      width: auto;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
     }
 
-    h1, p {
-      margin-bottom: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 8px 12px;
-      border-radius: 8px;
-      display: inline-block;
+    h1 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      margin-bottom: 1rem;
     }
 
     .countdown {
-      margin-top: 20px;
-      font-size: 1.5em;
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
       font-weight: bold;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 10px 20px;
-      border-radius: 10px;
-      display: inline-block;
+      margin-top: 1rem;
     }
 
-    #content {
-      display: none;
-    }
-
-    @supports not (backdrop-filter: blur(10px)) {
-      .container {
-        background-color: rgba(0, 0, 0, 0.7);
+    @media (max-width: 480px) {
+      .logo img {
+        max-height: 80px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container" id="content">
+  <div class="wrapper">
     <div class="logo">
-      <img src="images/logo.png" alt="Logo">
+      <img src="images\logo.png" alt="Logo" />
     </div>
     <h1>We're launching soon!</h1>
     <p>Our website is under construction. Stay tuned!</p>
@@ -83,18 +80,16 @@
   </div>
 
   <script>
-    // Password protection
-    const correctPassword = "admin123"; // Set your password here
+    // Password Protection
+    const correctPassword = "admin123";
     const userInput = prompt("Please enter the password to view this page:");
 
-    if (userInput === correctPassword) {
-      document.getElementById("content").style.display = "block";
-    } else {
-      document.body.innerHTML = "<h2 style='color:white;text-shadow:1px 1px 3px black;'>Access Denied</h2>";
+    if (userInput !== correctPassword) {
+      document.body.innerHTML = "<h2 style='color:black;text-align:center;margin-top:20%;'>Access Denied</h2>";
     }
 
-    // Countdown logic
-    const launchDate = new Date("2025-09-01T00:00:00").getTime(); // Customize launch date
+    // Countdown Timer
+    const launchDate = new Date("2025-09-01T00:00:00").getTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
