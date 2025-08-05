@@ -1,4 +1,4 @@
-// Simple JavaScript to handle button click
+// Simple JavaScript to handle button click  
 const btn = document.getElementById('notifyBtn');
 const message = document.getElementById('message');
 
@@ -8,3 +8,4 @@ btn.addEventListener('click', () => {
   btn.style.backgroundColor = '#6c757d'; // change button color to gray
   btn.style.cursor = 'default';
 });
+
