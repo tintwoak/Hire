@@ -1,4 +1,5 @@
-/* Basic CSS for center alignment and styling */
+/* style.css */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,22 +13,19 @@ html, body {
 }
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: url('images/background.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: #333;
-  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
+
 .overlay {
-  /*background-color: rgba(255, 255, 255, 0.8);  NEW light white background */
+  /*background-color: rgba(255, 255, 255, 0.4);  NEW light white background */
   padding: 40px 20px;
   border-radius: 15px;
-  color: #333; /* change text color for readability */
+ color: black; /* change text color for readability */
   text-align: center;
   max-width: 600px;
   width: 100%;
@@ -36,37 +34,6 @@ body {
 .logo {
   width: 100px;
   margin-bottom: 20px;
-}
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5em;
-}
-
-p {
-  margin-bottom: 1.5em;
-  font-size: 1.2rem;
-}
-
-button {
-  padding: 0.6em 1.2em;
-  font-size: 1rem;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-#message {
-  margin-top: 1em;
-  font-weight: bold;
-  color: green;
-
 }
 
 @media (max-width: 600px) {
@@ -83,3 +50,58 @@ button:hover {
   }
 }
 
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.countdown-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 80px;
+  text-align: center;
+  color: black;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.countdown-box span {
+  display: block;
+  font-size: 1rem;
+  //font-weight: bold;
+}
+
+.countdown-box label {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  display: block;
+}
+
+button {
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+#message {
+  margin-top: 1em;
+  font-weight: bold;
+  color: green;
+
+}
