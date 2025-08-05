@@ -5,6 +5,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+ #content {
+      display: none;
+    }
+
+body.locked {
+      background: none !important;
+    }
 
 html, body {
   height: 100%;
@@ -106,3 +113,4 @@ button:hover {
   color: green;
 
 }
+
