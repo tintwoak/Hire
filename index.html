@@ -11,27 +11,27 @@
       padding: 0;
     }
 
-    body, html {
+    html, body {
       height: 100%;
       font-family: "Segoe UI", sans-serif;
-      color: white;
-      text-align: center;
-    }
-
-    body {
-      background: url('background.jpg') no-repeat center center/cover;
+      background: url('images/background.jpg') no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
       padding: 20px;
+      color: #fff;
     }
 
     .container {
-      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1); /* translucent white */
+      border-radius: 20px;
       padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .logo {
@@ -40,27 +40,42 @@
 
     .logo img {
       height: 100px;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
     }
 
-    h1 {
-      font-size: 2em;
+    h1, p {
       margin-bottom: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: inline-block;
     }
 
     .countdown {
-      font-size: 1.5em;
       margin-top: 20px;
+      font-size: 1.5em;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: inline-block;
     }
 
     #content {
       display: none;
+    }
+
+    @supports not (backdrop-filter: blur(10px)) {
+      .container {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
     }
   </style>
 </head>
 <body>
   <div class="container" id="content">
     <div class="logo">
-      <img src="logo.png" alt="Logo">
+      <img src="images/logo.png" alt="Logo">
     </div>
     <h1>We're launching soon!</h1>
     <p>Our website is under construction. Stay tuned!</p>
@@ -69,17 +84,17 @@
 
   <script>
     // Password protection
-    const correctPassword = "admin123"; // Change this to your desired password
+    const correctPassword = "admin123"; // Set your password here
     const userInput = prompt("Please enter the password to view this page:");
 
     if (userInput === correctPassword) {
       document.getElementById("content").style.display = "block";
     } else {
-      document.body.innerHTML = "<h2 style='color:white;'>Access Denied</h2>";
+      document.body.innerHTML = "<h2 style='color:white;text-shadow:1px 1px 3px black;'>Access Denied</h2>";
     }
 
-    // Countdown timer
-    const launchDate = new Date("2025-09-01T00:00:00").getTime(); // Set launch date here
+    // Countdown logic
+    const launchDate = new Date("2025-09-01T00:00:00").getTime(); // Customize launch date
 
     function updateCountdown() {
       const now = new Date().getTime();
