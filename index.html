@@ -2,19 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hiredor</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Hide content until JS shows it */
+    #content {
+      display: none;
+    }
+
+    body.locked {
+      background: none !important;
+    }
+  </style>
 </head>
-<body>
-<!-- Logo Image -->
-  <img src="logo.jpeg" alt="Logo" style="max-width: 200px; height: auto;" />
-  <h3>Website Under Construction</h3>
-  <p>We’re working hard to bring you something awesome. Stay tuned!</p>
-  <button id="notifyBtn">Notify Me When Ready</button>
-  <div id="message"></div>
+<body class="locked">
+  <div id="content">
+    <div class="overlay">
+      <img src="images/logo.png" alt="Logo" class="logo" />
+	<div id="countdown" class="countdown-timer">
+		<div class="countdown-box">
+		    <span id="days">00</span>
+		    <label>Days</label>
+		</div>
+		<div class="countdown-box">
+			<span id="hours">00</span>
+			<label>Hours</label>
+		</div>
+		<div class="countdown-box">
+		    <span id="minutes">00</span>
+		    <label>Minutes</label>
+		</div>
+		<div class="countdown-box">
+		    <span id="seconds">00</span>
+		    <label>Seconds</label>
+		</div>
+	</div>
+
+      <h1>We're Working on Something Awesome</h1>
+      <p>This website is currently under construction. Stay tuned!</p>
+
+    </div>
+  </div>
 
   <script src="script.js"></script>
+
 </body>
 </html>
-
